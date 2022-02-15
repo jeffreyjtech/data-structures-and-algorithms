@@ -132,7 +132,19 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.forEach(element => {
+    if(Number.isInteger(element/15)){
+      newArr.push('Fizz Buzz');
+    } else if(Number.isInteger(element/3)){
+      newArr.push('Fizz');
+    } else if(Number.isInteger(element/5)){
+      newArr.push('Buzz');
+    } else {
+      newArr.push(element);
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
