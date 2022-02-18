@@ -1,5 +1,7 @@
 'use strict';
 
+const { first } = require("cheerio/lib/api/traversing");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -51,7 +53,7 @@ HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbers = (arr) => {
-  // Solution code here...
+  return arr.sort((firstNum, secondNum) => firstNum - secondNum);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +65,9 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
-  // Solution code here...
+  // Either of these work
+  // return arr.sort((firstNum, secondNum) => firstNum - secondNum).reverse();
+  return arr.sort((firstNum, secondNum) => secondNum - firstNum);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,7 +81,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,7 +98,7 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  return arr.sort((itemA, itemB) => itemA.price - itemB.price);
 };
 
 /* ------------------------------------------------------------------------------------------------
