@@ -135,13 +135,14 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  let strArray = [...str];
-  strArray = strArray.reduce((reversedStr, char) => {
-    reversedStr.unshift(char);
-    return reversedStr;
-  }, []);
-  let reversedStr = strArray.join('');
-  return reversedStr;
+  return str.split('').reduce((newStr, char) => char + newStr, '');
+  // let strArray = [...str];
+  // strArray = strArray.reduce((reversedStr, char) => {
+  //   reversedStr.unshift(char);
+  //   return reversedStr;
+  // }, []);
+  // let reversedStr = strArray.join('');
+  //  reversedStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
