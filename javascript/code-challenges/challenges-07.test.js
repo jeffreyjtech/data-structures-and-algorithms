@@ -141,6 +141,8 @@ const listFoods = (recipe) => {
 
   result = recipe.ingredients.map(ingredient => {
     let validIngredient = '';
+    // The gist of this forEach operation is that I'm taking the ingredient and checking it against my unit dictionary
+    // If I get a hit, then the remaining substring is sliced out and stored+returned in validIngredient
     unitDictionary.forEach(unit => ingredient.indexOf(unit) === -1 ?
       'nothing happens' :
       validIngredient = ingredient.slice(ingredient.indexOf(unit) + unit.length + 1)
