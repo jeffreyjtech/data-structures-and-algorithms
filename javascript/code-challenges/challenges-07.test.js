@@ -25,8 +25,18 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  // Solution code here...
+  // This took me so long, I'm going to speak to JavaScript's manager and ask for a refund on my type coercion
+  // I believe after reading ECMA 262 section 7.2.14 that comparing two strings is black magic
+  // The bottom line is that the operands are not type-coerced into numbers if both operands are strings
+  return starWarsArr.sort(
+    (personA, personB) => (personA.height === personB.height) ?
+      0 :
+      (Number(personA.height) > Number(personB.height)) ?
+        -1 :
+        1
+  );
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -35,7 +45,8 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  arr.splice(idx, 3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +56,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  // Solution code here...
+  return arr.toString().replaceAll(',',' ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +74,9 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for(let i = 0; i <= str.length; i++){
+    result.push(str.slice(i));
+  }
   return result;
 };
 
@@ -76,7 +89,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  return [...arr];
 };
 
 
@@ -123,7 +136,18 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  let unitDictionary = ['medium-sized','pound','gallon','cup'];
+  unitDictionary.forEach(entry => unitDictionary.push(`${entry}s`));
+
+  result = recipe.ingredients.map(ingredient => {
+    let validIngredient = '';
+    unitDictionary.forEach(unit => ingredient.indexOf(unit) === -1 ?
+      'nothing happens' :
+      validIngredient = ingredient.slice(ingredient.indexOf(unit) + unit.length + 1)
+    );
+    return validIngredient;
+  });
+
   return result;
 };
 
