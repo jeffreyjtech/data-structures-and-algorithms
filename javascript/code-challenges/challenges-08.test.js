@@ -66,12 +66,12 @@ const sortByChildren = (charArray) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not. 
+Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not.
 
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  // Solution code here...
+  return /w/.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,7 +87,7 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
+  return /[0-9]/.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,7 +98,7 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  // Solution code here...
+  return /world/.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -110,7 +110,7 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  // return str.match(/[A-Z][a-zA-Z]+/g);
 };
 
 /* ------------------------------------------------------------------------------------------------
