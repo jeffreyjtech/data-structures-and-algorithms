@@ -53,7 +53,14 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  // Solution code here...
+  return charArray.sort(
+    (charA, charB) => (charA.children.length - charB.children.length) !== 0 ?
+      charA.children.length - charB.children.length :
+      charA.house < charB.house ?
+        -1 :
+        1
+    // According to StackOverflow, .localeCompare() is the real tool to use here since it ignores cases and handles diacritics.
+  );
 };
 
 /* ------------------------------------------------------------------------------------------------
