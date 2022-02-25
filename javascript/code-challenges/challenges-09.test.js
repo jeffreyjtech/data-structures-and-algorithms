@@ -62,7 +62,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+  return Object.entries(obj).map(pair => pair.join(': '));
 };
 
 
@@ -118,7 +118,9 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+
+  houses = arr.map(character => character.house);
+
   return houses;
 };
 
@@ -135,9 +137,26 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-
+  return Array.isArray(Object.values(arr.filter(char => char.name === character)[0])[2]);
 };
+// For my own memory, here are some alternatives:
+// {
+// let char = arr.filter(char => char.name === character)[0];
+// return Array.isArray(Object.values(char)[2]);
+// }
+
+// {
+// let newArr = arr.filter(character => Object.values(character));
+// let bool = false;
+// for(let i = 0; i < newArr.length; i++) {
+//   bool = (newArr[i][0] === character && Array.isArray(newArr[i][2]));
+//   if(bool) break;
+// return bool;
+// }
+
+// If I didn't have to use Object.values:
+// return arr.filter(char => Array.isArray(character.children)).includes(character);
+// return Array.isArray(arr.filter(char => char.name === character)[0].children)
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
