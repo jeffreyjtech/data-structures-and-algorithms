@@ -8,7 +8,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str){
-  // Solution code here...
+  return str.split('').splice(str.length - 10,10);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,7 +26,8 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  let arrMax = array => array.sort((a,b)=>b-a)[0];
+  return matrix.sort((rowA, rowB) => arrMax(rowB) - arrMax(rowA))[0][0];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,7 +45,7 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  return matrix.flat().reduce((acc, current) => acc + current,0);
 };
 
 
@@ -71,8 +72,9 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
-
+  // stores is a matrix
+  // acc is an array of totals [63,201,30,...n]
+  return stores.reduce((acc, current) => acc.map((int, i) => int + current[i]));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,7 +88,10 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  // data is the totals from grandTotal()
+  // hours is an array of strings ['9 a.m.', '10 a.m.', etc]
+  // To return an object in a one-line arrow function, surround the object literal in parentheses
+  return hours.map((hour, i) => ({ sales: `${data[i]} cookies`, time: hour}));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,7 +116,10 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  // errands is an array of storeObjs, each with this shape: {store: String, items: Array}
+  // items is an array of ItemObjs, each with this shape: {name: String, quantity: Int}
+  // Since the array structure will not change, we can reference it directly.
+  return arr[2].items[1].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
