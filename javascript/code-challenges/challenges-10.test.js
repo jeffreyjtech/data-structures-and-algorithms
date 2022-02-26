@@ -88,7 +88,10 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  // data is the totals from grandTotal()
+  // hours is an array of strings ['9 a.m.', '10 a.m.', etc]
+  // To return an object in a one-line arrow function, surround the object literal in parentheses
+  return hours.map((hour, i) => ({ sales: `${data[i]} cookies`, time: hour}));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,7 +116,10 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  // errands is an array of storeObjs, each with this shape: {store: String, items: Array}
+  // items is an array of ItemObjs, each with this shape: {name: String, quantity: Int}
+  // Since the array structure will not change, we can reference it directly.
+  return arr[2].items[1].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
