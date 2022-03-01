@@ -163,6 +163,10 @@ let findShortest = (data) => {
   return data.find(character => parseInt(character.height) === shortestHeight).name;
   // Answer if not forced to use filter, map or reduce:
   // return data.sort((charA, charB) => charA.height - charB.height)[0].name;
+
+  // Answer using reduce, note that since we're only finding one element, reduce is fine.
+  // A ternary statement where a comparison is evaluated and either character OBJECT is returned will do the trick.
+  // return data.reduce((shortestSoFar, char) => parseInt(shortestSoFar.height) < char.height ? shortestSoFar : char).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
