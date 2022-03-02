@@ -7,8 +7,16 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 ------------------------------------------------------------------------------------------------ */
 
 const replaceZeros = (string) => {
-  // Solution code here...
+  let workingString = string;
+  let regex = /0/gm;
+  while (regex.test(workingString)){
+    workingString = workingString.replace(regex,'zero');
+  }
+  return workingString;
 };
+
+// I would have just used .replaceAll if I could
+// I learned in a previous Code Challenge that the automated testing environment does not have that method.
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -19,7 +27,7 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  // Solution code here...
+  return /(\b\d\d\d\d\b)/.test(pin);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,9 +39,9 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
-  // Solution code here...
+  // This actually wants to test for alphabetical characters only, with non-alphabetical characters excluded
+  return /^[a-zA-Z]{5,10}\b/.test(word);
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -43,7 +51,7 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
-  // Solution code here...
+  return /[a-zA-Z]\d/.test(string);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +71,7 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  // Solution code here...
+  return /^[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.(net|com|org)\b/.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
