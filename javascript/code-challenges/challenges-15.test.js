@@ -11,8 +11,9 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  // Solution code here...
-}
+  let regex = /^(Mr?s?.|Dr.) [[a-zA-Z0-9]+/;
+  return arr.filter(name => regex.test(name));
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -23,7 +24,8 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  // Solution code here...
+  let regex = /^./;
+  return arr.map(string => string.replace(regex,(firstChar) => firstChar.toUpperCase()));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,7 +100,9 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  if(!arr.length) return ''; // Thanks for passing in an empty array instead of what you said you would pass in
+  let lukeMass = parseInt(arr.find(character => character.name === 'Luke Skywalker').mass);
+  return arr.filter(character => character.mass > lukeMass).map(character => character.name).join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,11 +120,11 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  return arr.sort((itemA, itemB) => itemA[property] < itemB[property] ? -1 : 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function that determines if a given URL is secure, beginning with https://
 
@@ -132,11 +136,12 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  // Solution code here...
+  let regex = /^(https:\/\/).+/;
+  return regex.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named detectTicTacToeWin that accepts a two-dimensional array of strings. Each string is guaranteed to be either "X", "O" or an empty string. Your function should check to see if any row, column, or either diagonal direction has three matching "X" or "O" symbols (non-empty strings), three-in-a-line.
 
@@ -155,7 +160,11 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  let flatBoard = board.flat();
+  let columnArrs = [0,1,2].map((number) => [flatBoard[0+number],flatBoard[3+number],flatBoard[6+number]]);
+  let diagArrs = [[flatBoard[0],flatBoard[4],flatBoard[8]],[flatBoard[2],flatBoard[4],flatBoard[6]]];
+  let arrsToCheck = [...diagArrs,...columnArrs,...board];
+  return arrsToCheck.findIndex(arr => arr.every(pos => pos === 'X') || arr.every(pos => pos === 'O')) !== -1;
 };
 
 /* ------------------------------------------------------------------------------------------------
