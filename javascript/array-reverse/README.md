@@ -1,6 +1,6 @@
 # Reverse an Array
 
-The task for this code challenge is to write a function called reverseArray which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
+The task for this code challenge is to write a function called reverseArray which takes an array as an argument. The function, without utilizing any of the built-in methods available to your language, must return an array with elements in reversed order.
 
 ## Whiteboard Process
 
