@@ -12,37 +12,46 @@ class LinkedList {
     this.head = null;
   }
 
-  traverse(callback) { 
+  traverse(callback) {
     let current = this.head;
-
     while (current !== null) {
       callback(current.value);
-      current = current.next; 
+      current = current.next;
     }
   }
 
-  append(value) {
-
+  insert(value) {
     let current = this.head;
-
     while (current.next !== null) {
       current = current.next; 
     }
-
     current.next = new Node(value);
   }
 
   prepend(value) {
     this.head = new Node(value, this.head);
   }
+
+  includes(value) {
+    let current = this.head;
+    while (current.value !== value) {
+      if (current.next === null) {
+        return false;
+      } else {
+        current = current.next;
+      }
+    }
+
+    return true;
+  }
 }
 
-let ll = new LinkedList();
+let newLL = new LinkedList();
 
-ll.prepend(14);
-ll.prepend(12);
-ll.append(-13);
+newLL.prepend(14);
+newLL.prepend(12);
+newLL.insert(-13);
 
-console.log(ll);
+newLL.traverse(console.log);
 
-ll.traverse(console.log);
+console.log(newLL.includes(0));
