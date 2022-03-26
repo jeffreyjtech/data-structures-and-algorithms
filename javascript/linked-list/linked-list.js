@@ -23,7 +23,7 @@ class LinkedList {
   insert(value) {
     let current = this.head;
     while (current.next !== null) {
-      current = current.next; 
+      current = current.next;
     }
     current.next = new Node(value);
   }
@@ -44,6 +44,16 @@ class LinkedList {
 
     return true;
   }
+
+  toString() {
+    let current = this.head;
+    let string = '';
+    while (current !== null) {
+      string += `[${current.value}] -> `;
+      current = current.next;
+    }
+    return string + 'NULL';
+  }
 }
 
 let newLL = new LinkedList();
@@ -55,3 +65,4 @@ newLL.insert(-13);
 newLL.traverse(console.log);
 
 console.log(newLL.includes(0));
+console.log(newLL.toString());
