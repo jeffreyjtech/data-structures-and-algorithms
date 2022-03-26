@@ -26,4 +26,5 @@ To run your tests
 
 ### JavaScript Code 401
 
-[Code Challenge 01](javascript/array-reverse/README)
+[Code Challenge 01: array-reverse](javascript/array-reverse/README)
+[Code Challenge 05: linked-list](javascript/linked-list/README)
