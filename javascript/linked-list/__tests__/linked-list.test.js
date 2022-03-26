@@ -13,17 +13,22 @@ describe('Linked List', () => {
   it('Can properly insert into the linked list', () => {
     let newLL = new LinkedList;
 
-    let valueA = 12;
+    let valueA = true;
 
     newLL.insert(valueA);
 
-    expect(newLL.head.value).toEqual(valueA);
+    expect(newLL.head).toBeTruthy();
   });
 
   it('The head property will properly point to the first node in the linked list', () => {
     let newLL = new LinkedList;
 
-    
+    let valueA = 12;
+
+    newLL.insert(valueA);
+
+    expect(newLL.head.value).toEqual(valueA);
+    expect(newLL.head.next).toBeNull();
   });
 
   it('Can properly insert multiple nodes into the linked list', () => {
