@@ -4,57 +4,42 @@
 const LinkedList = require('../index');
 
 describe('Linked List', () => {
-  it('Can successfully instantiate an empty linked list', () => {
-    let newLL = new LinkedList;
+  let testLL = new LinkedList;
 
-    expect(newLL.head).toBeNull();
+  it('Can successfully instantiate an empty linked list', () => {
+    expect(testLL.head).toBeNull();
   });
 
   it('Can properly insert into the linked list', () => {
-    let newLL = new LinkedList;
+    testLL.insert(12);
 
-    let valueA = true;
-
-    newLL.insert(valueA);
-
-    expect(newLL.head).toBeTruthy();
+    expect(testLL.head).toBeTruthy();
   });
 
   it('The head property will properly point to the first node in the linked list', () => {
-    let newLL = new LinkedList;
-
-    let valueA = 12;
-
-    newLL.insert(valueA);
-
-    expect(newLL.head.value).toEqual(valueA);
-    expect(newLL.head.next).toBeNull();
+    expect(testLL.head.value).toBe(12);
+    expect(testLL.head.next).toBeNull();
   });
 
   it('Can properly insert multiple nodes into the linked list', () => {
-    let newLL = new LinkedList;
+    testLL.insert(13);
+    testLL.insert(67);
 
-    let valueA = 12;
-    let valueB = -13;
-
-    newLL.insert(valueA);
-    newLL.insert(valueB);
-
-    console.log(newLL);
-
-    expect(newLL.head.value).toEqual(valueB);
-    expect(newLL.head.next.value).toEqual(valueA);
+    expect(testLL.head.value).toBe(67);
+    expect(testLL.head.next.value).toBe(13);
   });
 
   it('Will return true when finding a value within the linked list that exists', () => {
-    expect(true).toBeTruthy();
+    expect(testLL.includes(12)).toBe(true);
   });
 
   it('Will return false when searching for a value in the linked list that does not exist', () => {
-    expect(true).toBeTruthy();
+    expect(testLL.includes(569234678054)).toBe(false);
   });
 
   it('Can properly return a collection of all the values that exist in the linked list', () => {
-    expect(true).toBeTruthy();
+    let testString = `[${67}] -> [${13}] -> [${12}] -> NULL`;
+
+    expect(testLL.toString()).toBe(testString);
   });
 });
