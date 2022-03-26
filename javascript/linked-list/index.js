@@ -42,14 +42,14 @@ class LinkedList {
   includes(value) {
     let current = this.head;
     while (current !== null) {
-      if (current === value) {
+      if (current.value === value) {
         return true;
       } else {
         current = current.next;
       }
     }
 
-    return true;
+    return false;
   }
 
   toString() {
