@@ -63,21 +63,22 @@ describe('Linked List v2 tests (Code Challenge 06)', () => {
   });
 
   it('Can successfully insert a node before a node located in the middle of a linked list', () => {
-    testLL.insertBefore(49, 29);
+    testLL.insertBefore(29, 49);
 
     expect(testLL.head.next.value).toBe(49);
+    expect(testLL.head.next.next.value).toBe(29);
   });
 
   it('Can successfully insert a node before the first node of a linked list', () => {
-    testLL.insertBefore(124, 25);
+    testLL.insertBefore(25, 124);
 
     expect(testLL.head.value).toBe(124);
   });
 
   it('Can successfully insert after a node in the middle of the linked list', () => {
-    testLL.insertAfter(45, 49);
+    testLL.insertAfter(25, 126);
 
-    expect(testLL.head.next.next.value).toBe(45);
+    expect(testLL.head.next.next.value).toBe(126);
   });
 
   it('Can successfully insert a node after the last node of the linked list', () => {
@@ -86,7 +87,7 @@ describe('Linked List v2 tests (Code Challenge 06)', () => {
     freshTestLL.append(2);
     freshTestLL.append(4);
 
-    freshTestLL.insertAfter(8, 4);
+    freshTestLL.insertAfter(4, 8);
 
     expect(freshTestLL.head.next.next.value).toBe(8);
   });
