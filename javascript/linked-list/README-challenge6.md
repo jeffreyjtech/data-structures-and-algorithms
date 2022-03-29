@@ -20,7 +20,23 @@ My approach for the `append` method was to replicate the traversal logic from `i
 For all 3 methods, the Big O time & space efficiencies are O(n) & O(1), respectively.
 
 ## Solution
-<!-- Show how to run your code, and examples of it in action -->
-```js
 
+### Example usage
+
+```js
+myLL = new LinkedList;
+
+myLL.append(12); 
+
+console.log(myLL.head.value) // Prints the value 12
+
+myLL.insertBefore(12, true)
+
+console.log(myLL.head.value) // Prints the value true
+
+myLL.insertAfter(true, 11)
+
+console.log(myLL.head.next.value) // Prints the value 11
+console.log(myLL.toString()) // Method from previous code challenge, 
+// Will print string: '[true] -> [11] -> [12] -> NULL'
 ```
