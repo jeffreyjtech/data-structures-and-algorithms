@@ -26,5 +26,9 @@ To run your tests
 
 ### JavaScript Code 401
 
-[Code Challenge 01: array-reverse](javascript/array-reverse/README)
-[Code Challenge 05: linked-list](javascript/linked-list/README)
+1. [Code Challenge 01: array-reverse](javascript/array-reverse/README)
+1. [Code Challenge 02: array-insert-shift](javascript/array-insert-shift/README)
+1. [Code Challenge 03: array-binary-search](javascript/array-binary-search/README)
+1. Code Challenge 04 was a mock interview not documented in this repo.
+1. [Code Challenge 05: linked-list](javascript/linked-list/README-challenge5)
+1. [Code Challenge 06: linked-list-insertions](javascript/linked-list/README-challenge6)
