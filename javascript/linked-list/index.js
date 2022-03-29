@@ -62,22 +62,22 @@ class LinkedList {
     return string + 'NULL';
   }
 
-  insertBefore(searchValue, newValue) {
-    if (this.head.value === searchValue) {
+  insertBefore(value, newValue) {
+    if (this.head.value === value) {
       this.head = new Node(newValue, this.head);
       return;
     }
 
     let current = this.head;
-    while (current.next.value !== searchValue) {
+    while (current.next.value !== value) {
       current = current.next;
     }
     current.next = new Node(newValue, current.next);
   }
 
-  insertAfter(searchValue, newValue) {
+  insertAfter(value, newValue) {
     let current = this.head;
-    while (current.next !== null && current.value !== searchValue) {
+    while (current.next !== null && current.value !== value) {
       current = current.next;
     }
     current.next = new Node(newValue, current.next);
