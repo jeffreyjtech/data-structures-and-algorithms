@@ -1,7 +1,7 @@
 'use strict';
 
 // Require our linked list implementation
-const LinkedList = require('../index');
+const { LinkedList } = require('../index');
 
 describe('Linked List v1 tests (Code Challenge 05)', () => {
   let testLL = new LinkedList;
