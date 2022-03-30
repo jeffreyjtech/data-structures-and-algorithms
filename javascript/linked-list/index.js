@@ -35,10 +35,6 @@ class LinkedList {
     current.next = newNode;
   }
 
-  insert(value) {
-    this.head = new Node(value, this.head);
-  }
-
   includes(value) {
     let current = this.head;
     while (current !== null) {
@@ -62,6 +58,14 @@ class LinkedList {
     return string + 'NULL';
   }
 
+  /*
+  INSERT METHODS
+  */
+
+  insert(value) {
+    this.head = new Node(value, this.head);
+  }
+
   insertBefore(value, newValue) {
     if (this.head.value === value) {
       this.head = new Node(newValue, this.head);
@@ -81,6 +85,28 @@ class LinkedList {
       current = current.next;
     }
     current.next = new Node(newValue, current.next);
+  }
+
+  /*
+  Kth FROM END METHODs
+  */
+
+  reverse() {
+    let current = this.head.next;
+    this.head.next = null;
+    while (current !== null) {
+      current.next = current;
+    }
+    console.log(this);
+  }
+
+  kthFromEnd(k) {
+    /*
+      Return the node’s value that is k places from the tail of the linked list.
+      You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+    */
+
+    
   }
 }
 
