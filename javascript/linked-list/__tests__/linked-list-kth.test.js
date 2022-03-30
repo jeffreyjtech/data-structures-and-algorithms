@@ -1,7 +1,7 @@
 'use strict';
 
 // Require our linked list implementation
-const LinkedList = require('../index');
+const { LinkedList } = require('../index');
 
 describe('Linked List v3 tests (Code Challenge 07)', () => {
   let testLL = new LinkedList;
@@ -11,24 +11,24 @@ describe('Linked List v3 tests (Code Challenge 07)', () => {
   testLL.append(value1);
   testLL.append(value2);
   testLL.append(value3);
-  testLL.reverse();
+  console.log(testLL.length);
 
   it('Where k is greater than the length of the linked list', () => {
     let k = 4;
 
-    testLL.kthFromEnd(k);
+    expect(testLL.kthFromEnd(k)).toBe(null);
   });
 
   it('Where k and the length of the list are the same', () => {
     let k = 3;
 
-    testLL.kthFromEnd(k);
+    expect(testLL.kthFromEnd(k)).toBe(value1);
   });
 
   it('Where k is not a positive integer', () => {
     let k = -3;
 
-    testLL.kthFromEnd(k);
+    expect(testLL.kthFromEnd(k)).toBe(null);
   });
 
   it('Where the linked list is of a size 1', () => {
@@ -37,12 +37,12 @@ describe('Linked List v3 tests (Code Challenge 07)', () => {
 
     let k = 1;
 
-    oneNodeLL.kthFromEnd(k);
+    expect(oneNodeLL.kthFromEnd(k)).toBe(10);
   });
 
   it('Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
     let k = 2;
 
-    testLL.kthFromEnd(k);
+    expect(testLL.kthFromEnd(k)).toBe(value2);
   });
 });
