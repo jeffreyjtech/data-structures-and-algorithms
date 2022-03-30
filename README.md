@@ -32,3 +32,4 @@ To run your tests
 1. Code Challenge 04 was a mock interview not documented in this repo.
 1. [Code Challenge 05: linked-list](javascript/linked-list/README-challenge5)
 1. [Code Challenge 06: linked-list-insertions](javascript/linked-list/README-challenge6)
+1. [Code Challenge 07: linked-list-kth](javascript/linked-list/README-challenge7)
