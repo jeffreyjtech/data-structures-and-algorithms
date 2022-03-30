@@ -1,7 +1,7 @@
 'use strict';
 
 class Node {
-  constructor(value, next = null){
+  constructor(value, next = null) {
     this.value = value;
     this.next = next;
   }
@@ -60,6 +60,27 @@ class LinkedList {
       current = current.next;
     }
     return string + 'NULL';
+  }
+
+  insertBefore(value, newValue) {
+    if (this.head.value === value) {
+      this.head = new Node(newValue, this.head);
+      return;
+    }
+
+    let current = this.head;
+    while (current.next.value !== value) {
+      current = current.next;
+    }
+    current.next = new Node(newValue, current.next);
+  }
+
+  insertAfter(value, newValue) {
+    let current = this.head;
+    while (current.next !== null && current.value !== value) {
+      current = current.next;
+    }
+    current.next = new Node(newValue, current.next);
   }
 }
 
