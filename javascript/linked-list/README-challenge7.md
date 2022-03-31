@@ -14,6 +14,8 @@ I say this because I started by creating a function `reverse` to reverse a linke
 
 By the time I started work on `kthFromEnd`, I decided to use an solution which seemed straightforward. The current pointer would partially traverse the linked list. It would know to stop by comparing the "length" of `k`, plus the number of iterations, to the length of the linked list.
 
+The Big O time and space efficiencies are O(n) and O(1) respectively.
+
 ## Solution
 
 ```js
