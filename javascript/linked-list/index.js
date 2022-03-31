@@ -123,7 +123,34 @@ function reverse(oldLL) {
   return newLL;
 }
 
+function zipLists(list1, list2) {
+  let newList = new LinkedList;
+  let currentList = list1;
+  let otherList = list2;
+  if( list1.head === null ){
+    currentList = list2;
+    otherList = list1;
+  }
+  let current = currentList.head;
+  while (list1.head !== null || list2.head !== null) {
+    newList.append(current.value);
+    currentList.head = currentList.head.next;
+    currentList.length--;
+    if (otherList.head !== null) {
+      current = otherList.head;
+      let tmp = currentList;
+      currentList = otherList;
+      otherList = tmp;
+    } else {
+      current = currentList.head;
+    }
+  }
+
+  return newList;
+}
+
 module.exports = {
   LinkedList,
   reverse,
+  zipLists,
 };
