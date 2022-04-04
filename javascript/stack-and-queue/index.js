@@ -17,10 +17,13 @@ class Stack {
   }
 
   pop() {
-    let result;
-    result = this.top.value;
+    let result = this.top.value;
     this.top = this.top.next;
     return result;
+  }
+
+  peek() {
+    return this.top.value;
   }
 
   isEmpty() {
@@ -59,6 +62,10 @@ class Queue {
       this.front = this.front.next;
     }
     return result;
+  }
+
+  peek() {
+    return this.front.value;
   }
 
   isEmpty() {
