@@ -13,15 +13,13 @@ class Stack {
   }
 
   push(value) {
-    this.top = new Node(value, this.top)
+    this.top = new Node(value, this.top);
   }
 
   pop() {
     let result;
-    if(!this.isEmpty()){
-      result = this.top.value;
-      this.top = this.top.next;
-    }
+    result = this.top.value;
+    this.top = this.top.next;
     return result;
   }
 
@@ -33,19 +31,6 @@ class Stack {
     }
   }
 }
-
-let myFirstStack = new Stack;
-
-myFirstStack.push(1);
-myFirstStack.push(2);
-
-console.log('Here\'s my stack:\n ', myFirstStack);
-
-let pop = myFirstStack.pop();
-
-console.log(`Now I\'ve popped \`${pop}\` off my stack:\n `, myFirstStack);
-
-console.log(myFirstStack.isEmpty());
 
 class Queue {
   constructor() {
@@ -63,17 +48,15 @@ class Queue {
     }
   }
 
-  dequeue(value) {
+  dequeue() {
     let result;
-    if (!this.isEmpty()) {
-      if (this.front.next === null) {
-        result = this.front.value;
-        this.front = this.front.next;
-        this.back = this.front;
-      } else if (this.front.next !== null) {
-        result = this.front.value;
-        this.front = this.front.next;
-      } 
+    if (this.front.next === null) {
+      result = this.front.value;
+      this.front = this.front.next;
+      this.back = this.front;
+    } else if (this.front.next !== null) {
+      result = this.front.value;
+      this.front = this.front.next;
     }
     return result;
   }
@@ -87,21 +70,7 @@ class Queue {
   }
 }
 
-let myFirstQueue = new Queue;
-
-myFirstQueue.enqueue(5);
-myFirstQueue.enqueue(10);
-myFirstQueue.enqueue(15);
-
-console.log('Here\'s my queue:\n ',myFirstQueue);
-
-let dequeue = myFirstQueue.dequeue();
-
-console.log(`Now I\'ve dequeued \`${dequeue}\` off my queue:\n `, myFirstQueue);
-
-let secondDequeue = myFirstQueue.dequeue();
-let lastDequeue = myFirstQueue.dequeue();
-
-console.log(`I can even dequeue the last node \`${lastDequeue}\` off my queue:\n `, myFirstQueue);
-
-myFirstQueue.dequeue();
+module.exports = {
+  Queue,
+  Stack
+};
