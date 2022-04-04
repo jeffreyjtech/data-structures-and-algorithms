@@ -13,6 +13,8 @@ Created two classes, one which implement the features of Stack and one which imp
 
 I can't say I took any particular approach to implementing Stack and Queue. I just wanted to write clean, simple methods with time and space efficiencies of O(1).
 
+The time and space efficiencies for all methods are O(1).
+
 ## API
 
 ### Stack methods:
