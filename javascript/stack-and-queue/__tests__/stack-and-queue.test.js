@@ -9,6 +9,7 @@ describe('Testing Stack class', () => {
     testStack = new Stack;
 
     expect(testStack.top).toBeNull();
+    expect(testStack.isEmpty()).toBe(true);
   });
 
   test('Can push one value onto stack', () => {
@@ -59,6 +60,7 @@ describe('Testing Queue class', () => {
 
     expect(testQueue.front).toBeNull();
     expect(testQueue.back).toBeNull();
+    expect(testQueue.isEmpty()).toBe(true);
   });
 
   test('Can enqueue one value', () => {
@@ -99,38 +101,3 @@ describe('Testing Queue class', () => {
     expect(() => testQueue.peek()).toThrow();
   });
 });
-/*
-let myFirstQueue = new Queue;
-
-myFirstQueue.enqueue(5);
-myFirstQueue.enqueue(10);
-myFirstQueue.enqueue(15);
-
-console.log('Here\'s my queue:\n ',myFirstQueue);
-
-let dequeue = myFirstQueue.dequeue();
-
-console.log(`Now I\'ve dequeued \`${dequeue}\` off my queue:\n `, myFirstQueue);
-
-myFirstQueue.dequeue();
-let lastDequeue = myFirstQueue.dequeue();
-
-console.log(`I can even dequeue the last node \`${lastDequeue}\` off my queue:\n `, myFirstQueue);
-
-myFirstQueue.dequeue();
-*/
-
-/*
-let myFirstStack = new Stack;
-
-myFirstStack.push(1);
-myFirstStack.push(2);
-
-console.log('Here\'s my stack:\n ', myFirstStack);
-
-let pop = myFirstStack.pop();
-
-console.log(`Now I\'ve popped \`${pop}\` off my stack:\n `, myFirstStack);
-
-console.log(myFirstStack.isEmpty());
-*/
