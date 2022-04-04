@@ -28,15 +28,20 @@ describe('Testing Stack class', () => {
   });
 
   test('Can pop value off stack', () => {
+    let correctValue = testStack.top.value;
     let poppedValue = testStack.pop();
 
-    expect(poppedValue).toBe('green');
-    expect(testStack.top.next.value).toBe('blue');
+    expect(poppedValue).toBe(correctValue);
   });
 
-  test
+  test('Can peek top value on stack', () => {
+    let correctValue = testStack.top.value;
+    let peekedValue = testStack.peek();
 
-  test('Calling pop on an empty stack raises an exception', () => {
+    expect(peekedValue).toBe(correctValue);
+  });
+
+  test('Calling pop or peek on an empty stack raises an exception', () => {
     testStack.pop();
     testStack.pop();
 
@@ -47,12 +52,51 @@ describe('Testing Stack class', () => {
 
 
 describe('Testing Queue class', () => {
+  let testQueue = new Queue;
 
   test('Create an empty queue', () => {
-    let testQueue = new Queue;
+    testQueue = new Queue;
 
     expect(testQueue.front).toBeNull();
     expect(testQueue.back).toBeNull();
+  });
+
+  test('Can enqueue one value', () => {
+    testQueue.enqueue('blue');
+
+    expect(testQueue.front.value).toBe('blue');
+    expect(testQueue.front.next).toBeNull();
+  });
+
+  test('Can enqueue multiple values', () => {
+    testQueue.enqueue('red');
+    testQueue.enqueue('green');
+
+    expect(testQueue.front.value).toBe('blue');
+    expect(testQueue.front.next.value).toBe('red');
+    expect(testQueue.front.next.next.value).toBe('green');
+  });
+
+  test('Can dequeue front value', () => {
+    let correctValue = testQueue.front.value;
+    let dequeuedValue = testQueue.dequeue();
+
+    expect(dequeuedValue).toBe(correctValue);
+  });
+
+  test('Can peek top front value on stack', () => {
+    let correctValue = testQueue.front.value;
+    let peekedValue = testQueue.peek();
+
+    expect(peekedValue).toBe(correctValue);
+  });
+
+  test('Calling pop or peek on an empty stack raises an exception', () => {
+    testQueue.dequeue();
+    testQueue.dequeue();
+
+    expect(() => testQueue.dequeue()).toThrow();
+    expect(() => testQueue.peek()).toThrow();
   });
 });
 /*
