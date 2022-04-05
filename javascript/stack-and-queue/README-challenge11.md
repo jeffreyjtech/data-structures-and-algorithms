@@ -9,7 +9,7 @@ Create a new class called `PsuedoQueue`, with methods `enqueue()` and `dequeue()
 
 ## Whiteboard Process
 
-![Whiteboard diagram of my solution](./challenge-08-whiteboard.jpg)
+![Whiteboard diagram of my solution](./challenge-11-whiteboard.jpg)
 
 ## Approach & Efficiency
 
