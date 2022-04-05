@@ -15,6 +15,8 @@ Create a new class called `PsuedoQueue`, with methods `enqueue()` and `dequeue()
 
 My approach was to exploit the fact that chaining two stacks together ends up canceling out their LIFO nature to make a FIFO data structure. I created a `loadStack` and `unloadStack`. When `enqueue()` is called, `loadStack` will be filled with the contents of `unloadStack` using sequential pop-to-push calls, then the new value will be pushed onto `loadStack`. When `dequeue()` is called, `unloadStack` will be filled with the contents of `loadStack` using sequential pop-to-push calls, then the new value will be popped off `unloadStack`
 
+For both methods (`enqueue()` & `dequeue()`), the time and space efficiencies are O(n) and O(1) respectively
+
 ## Solution
 
 ```javascript
