@@ -1,6 +1,6 @@
 # Challenge Summary
 
-Create a new class called `PsuedoQueue`, with methods `enqueue()` and `dequeue()` which have identical input parameters and return behavior as a real Queue. 
+Create a new class called `PsuedoQueue`, with methods `enqueue()` and `dequeue()` which have identical input parameters and return behavior as a real Queue.
 
 `PsuedoQueue` must be built within the following constraints:
 
