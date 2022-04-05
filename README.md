@@ -36,3 +36,4 @@ To run your tests
 1. [Code Challenge 08: linked-list-zip](javascript/linked-list/README-challenge8.md)
 1. Code Challenge 09 is a mock interview not documented in this repo.
 1. [Code Challenge 10: stack-and-queue](javascript/stack-and-queue/README-challenge10.md)
+1. [Code Challenge 11: stack-queue-pseudo](javascript/stack-and-queue/README-challenge11.md)
