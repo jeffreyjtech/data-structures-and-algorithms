@@ -13,6 +13,8 @@ Create a new class called `AnimalShelter`, with methods `enqueue()` and `dequeue
 
 My approach was to reuse the simple-but-effective logic from my previous implementation of a Queue class. As for dequeuing the correct species of animal, I implemented a simple conditional traversal. It's just enough to find the right node, remove it cleanly from the chain, and return it.
 
+The Big O time efficiency for `dequeue()` is O(n) in the worst case, *n* being the full length of the` AnimalShelter`. The remaining efficiency metrics, `dequeue()` space, `enqueue()` space & time, are O(1).
+
 ## Solution
 
 ```javascript
