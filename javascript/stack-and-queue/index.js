@@ -120,24 +120,28 @@ class AnimalShelter {
   }
 
   dequeue(pref) {
-    let result;
     let current = this.front;
-    while (current.animal.species !== pref){
-      if (this.front.next === null) {
-        result = this.front.animal;
-        this.front = this.front.next;
-        this.back = this.front;
-      } else if (this.front.next !== null) {
-        result = this.front.animal;
-        this.front = this.front.next;
-      }
-      current = this.front.next;
+    // let result = current.value;
+    console.log(current.value.species !== pref);
+    let previous = {};
+    while (current.value.species !== pref) {
+      previous = current;
+      current = current.next;
     }
-    return result;
+    previous.next = current.next;
+    return current.value;
   }
 
   sameSpecies(node, pref) {
     return node.value.species === pref;
+  }
+
+  isEmpty() {
+    if(this.back === null && this.front === null) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
 
