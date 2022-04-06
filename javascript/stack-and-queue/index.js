@@ -120,6 +120,7 @@ class AnimalShelter {
   }
 
   dequeue(pref) {
+    if(pref !== 'cat' && pref !== 'dog') return null;
     let current = this.front;
     let previous = {};
     while (current.value.species !== pref) {
