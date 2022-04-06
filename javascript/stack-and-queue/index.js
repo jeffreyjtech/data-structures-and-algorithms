@@ -103,8 +103,47 @@ class PseudoQueue {
   }
 }
 
+class AnimalShelter {
+  constructor() {
+    this.front = null;
+    this.back = null;
+  }
+
+  enqueue(animal) {
+    if(this.isEmpty()) {
+      this.front = new Node(animal, this.back);
+      this.back = this.front;
+    } else {
+      this.back.next = new Node(animal);
+      this.back = this.back.next;
+    }
+  }
+
+  dequeue(pref) {
+    let result;
+    let current = this.front;
+    while (current.animal.species !== pref){
+      if (this.front.next === null) {
+        result = this.front.animal;
+        this.front = this.front.next;
+        this.back = this.front;
+      } else if (this.front.next !== null) {
+        result = this.front.animal;
+        this.front = this.front.next;
+      }
+      current = this.front.next;
+    }
+    return result;
+  }
+
+  sameSpecies(node, pref) {
+    return node.value.species === pref;
+  }
+}
+
 module.exports = {
   Queue,
   Stack,
   PseudoQueue,
+  AnimalShelter,
 };
