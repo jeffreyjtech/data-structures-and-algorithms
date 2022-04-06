@@ -27,7 +27,7 @@ class Stack {
   }
 
   isEmpty() {
-    if(this.top === null) {
+    if (this.top === null) {
       return true;
     } else {
       return false;
@@ -42,7 +42,7 @@ class Queue {
   }
 
   enqueue(value) {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       this.front = new Node(value, this.back);
       this.back = this.front;
     } else {
@@ -69,7 +69,7 @@ class Queue {
   }
 
   isEmpty() {
-    if(this.back === null && this.front === null) {
+    if (this.back === null && this.front === null) {
       return true;
     } else {
       return false;
@@ -86,7 +86,7 @@ class PseudoQueue {
   }
 
   enqueue(value) {
-    while (!this.unloadStack.isEmpty()){
+    while (!this.unloadStack.isEmpty()) {
       this.loadStack.push(this.unloadStack.pop());
     }
     this.loadStack.push(value);
@@ -94,7 +94,7 @@ class PseudoQueue {
   }
 
   dequeue() {
-    while(!this.loadStack.isEmpty()){
+    while (!this.loadStack.isEmpty()) {
       this.unloadStack.push(this.loadStack.pop());
     }
     let result = this.unloadStack.pop();
@@ -110,7 +110,7 @@ class AnimalShelter {
   }
 
   enqueue(animal) {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       this.front = new Node(animal, this.back);
       this.back = this.front;
     } else {
@@ -121,23 +121,21 @@ class AnimalShelter {
 
   dequeue(pref) {
     let current = this.front;
-    // let result = current.value;
-    console.log(current.value.species !== pref);
     let previous = {};
     while (current.value.species !== pref) {
       previous = current;
       current = current.next;
     }
-    previous.next = current.next;
+    if (current === this.front) {
+      this.front = this.front.next;
+    } else {
+      previous.next = current.next;
+    }
     return current.value;
   }
 
-  sameSpecies(node, pref) {
-    return node.value.species === pref;
-  }
-
   isEmpty() {
-    if(this.back === null && this.front === null) {
+    if (this.back === null && this.front === null) {
       return true;
     } else {
       return false;
