@@ -48,4 +48,9 @@ describe('Testing AnimalShelter class', () => {
     expect(() => myAnimalShelter.dequeue('dog')).toThrow();
     expect(() => myAnimalShelter.dequeue('cat')).toThrow();
   });
+
+  test('Dequeue returns null if argument is neither \'cat\' or \'dog\'', () => {
+
+    expect(myAnimalShelter.dequeue('duck')).toBe(null);
+  });
 });
