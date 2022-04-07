@@ -9,7 +9,7 @@ function validateBrackets(string) {
   let closes = string.match(closesRegex).sort();
   let idx = 0;
   for (let char of opens) {
-    let goodPair = String(char + closes[idx]) === '{}' || String(char + closes[idx]) === '[]' || String(char + closes[idx]) === '()';
+    let goodPair = char + closes[idx] === '{}' || char + closes[idx] === '[]' || char + closes[idx] === '()';
     if (goodPair) {
       result = true;
       idx++;
