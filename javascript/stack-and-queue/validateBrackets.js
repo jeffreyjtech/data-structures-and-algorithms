@@ -2,17 +2,15 @@
 
 function validateBrackets(string) {
   let result = false;
-  const opensRegex = /[([{]/gm;
-  const closesRegex = /[)\]}]/gm;
-  if (!(opensRegex.test(string) && closesRegex.test(string))) return false;
-  let opens = string.match(opensRegex).sort();
-  let closes = string.match(closesRegex).sort();
-  let idx = 0;
-  for (let char of opens) {
-    let goodPair = char + closes[idx] === '{}' || char + closes[idx] === '[]' || char + closes[idx] === '()';
-    if (goodPair) {
-      result = true;
-      idx++;
+  const bracketsRegex = /[([{)\]}]/gm;
+  if (bracketsRegex.test(string)) return false;
+  let brackets = string.match(bracketsRegex);
+  let matcherArray = [];
+  for (let i = 0; i < brackets.length; i++) {
+    if (/[([{]/gm.test(brackets[i+1])) {
+      matcherArray.push(brackets.shift());
+    } else if (brackets[i] + matcherArray[i] === '{}' || brackets[i] + matcherArray[i] === '[]' || brackets[i] + matcherArray[i] === '()') {
+      brackets
     } else {
       return false;
     }
