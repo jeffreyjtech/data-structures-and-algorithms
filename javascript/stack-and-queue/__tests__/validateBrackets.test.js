@@ -25,7 +25,7 @@ describe('Testing validateBrackets function', () => {
   test('Fails string with only one bracket', () => {
     expect(validateBrackets('one bracket!)')).toBe(false);
   });
-  
+
   test('Fails string with only two brackets of different types', () => {
     expect(validateBrackets('(}')).toBe(false);
   });
