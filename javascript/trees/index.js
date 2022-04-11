@@ -63,9 +63,13 @@ class SearchTree extends Tree {
   }
 
   add(value) {
-    let current = this.root;
     let newNode = new Node(value);
-    while (current !== null) {
+    if(!this.root) {
+      this.root = newNode;
+      return;
+    }
+    let current = this.root;
+    while (current.left || current.right) {
       if(value > current.value) {
         if(current.right) {
           current = current.right;
@@ -84,8 +88,6 @@ class SearchTree extends Tree {
         throw new Error('Value already exists');
       }
     }
-    current = newNode;
-    return;
   }
 }
 
