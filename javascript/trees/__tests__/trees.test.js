@@ -36,5 +36,23 @@ describe('Testing the Tree class', () => {
 });
 
 describe('Testing the Binary Tree class', () => {
+  let testSearchTree = new SearchTree();
 
+  test('Can successfully add a left child and right child properly to a node', () => {
+    testSearchTree.add(5);
+    testSearchTree.add(4);
+    testSearchTree.add(6);
+
+    expect(testSearchTree.root.value).toBe(5);
+    expect(testSearchTree.root.right.value).toBe(6);
+    expect(testSearchTree.root.left.value).toBe(4);
+  });
+
+  test('contains() method returns true if value exists', () => {
+    expect(testSearchTree.contains(6)).toBe(true);
+  });
+
+  test('contains() method returns false if value does not exist', () => {
+    expect(testSearchTree.contains(45327698)).toBe(false);
+  });
 });

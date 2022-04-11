@@ -69,7 +69,7 @@ class SearchTree extends Tree {
       return;
     }
     let current = this.root;
-    while (current.left || current.right) {
+    while (current) {
       if(value > current.value) {
         if(current.right) {
           current = current.right;
@@ -88,6 +88,24 @@ class SearchTree extends Tree {
         throw new Error('Value already exists');
       }
     }
+  }
+
+  contains(value) {
+
+    const traverse = (node) => {
+      if(!node) {
+        return false;
+      }
+      if (node.value === value) {
+        return true;
+      } else if (value < node.value) {
+        return traverse(node.left);
+      } else {
+        return traverse(node.right);
+      }
+    };
+
+    return traverse(this.root);
   }
 }
 
