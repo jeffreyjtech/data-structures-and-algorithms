@@ -20,6 +20,7 @@ class Tree {
   }
 
   preOrder() {
+    this.errorIfEmpty();
     let results = [];
     let traverse = (node) => {
       results.push(node.value);
@@ -31,6 +32,7 @@ class Tree {
   }
 
   inOrder() {
+    this.errorIfEmpty();
     let results = [];
     let traverse = (node) => {
       if (node.left) traverse(node.left);
@@ -42,6 +44,7 @@ class Tree {
   }
 
   postOrder() {
+    this.errorIfEmpty();
     let results = [];
     let traverse = (node) => {
       if (node.left) traverse(node.left);
@@ -54,7 +57,40 @@ class Tree {
   }
 }
 
+class SearchTree extends Tree {
+  constructor() {
+    super();
+  }
+
+  add(value) {
+    let current = this.root;
+    let newNode = new Node(value);
+    while (current !== null) {
+      if(value > current.value) {
+        if(current.right) {
+          current = current.right;
+        } else {
+          current.right = newNode;
+          return;
+        }
+      } else if (value < current.value) {
+        if(current.left) {
+          current = current.left;
+        } else {
+          current.left = newNode;
+          return;
+        }
+      } else {
+        throw new Error('Value already exists');
+      }
+    }
+    current = newNode;
+    return;
+  }
+}
+
 module.exports = {
   Tree,
   Node,
+  SearchTree
 };
