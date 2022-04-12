@@ -7,7 +7,7 @@ Write a function which finds the maximum value in a Binary Tree which only conta
 
 ## Whiteboard Process
 
-![Whiteboard WIP](./challenge-16-whiteboard.jpg)
+![My Whiteboard process](./challenge-16-whiteboard.jpg)
 
 ## Approach & Efficiency
 
