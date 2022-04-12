@@ -29,11 +29,16 @@ To run your tests
 1. [Code Challenge 01: array-reverse](javascript/array-reverse/README.md)
 1. [Code Challenge 02: array-insert-shift](javascript/array-insert-shift/README.md)
 1. [Code Challenge 03: array-binary-search](javascript/array-binary-search/README.md)
-1. Code Challenge 04 is a mock interview not documented in this repo.
+1. Code Challenge 04 was a mock interview not documented in this repo.
 1. [Code Challenge 05: linked-list](javascript/linked-list/README-challenge5.md)
 1. [Code Challenge 06: linked-list-insertions](javascript/linked-list/README-challenge6.md)
 1. [Code Challenge 07: linked-list-kth](javascript/linked-list/README-challenge7.md)
 1. [Code Challenge 08: linked-list-zip](javascript/linked-list/README-challenge8.md)
-1. Code Challenge 09 is a mock interview not documented in this repo.
+1. Code Challenge 09 was a mock interview not documented in this repo.
 1. [Code Challenge 10: stack-and-queue](javascript/stack-and-queue/README-challenge10.md)
 1. [Code Challenge 11: stack-queue-pseudo](javascript/stack-and-queue/README-challenge11.md)
+1. [Code Challenge 12: stack-queue-animal-shelter](javascript/stack-and-queue/README-challenge12.md)
+1. [Code Challenge 13: stack-queue-animal-brackets](javascript/stack-and-queue/README-challenge13.md)
+1. Code Challenge 14 was a mock interview not documented in this repo.
+1. [Code Challenge 15: trees](javascript/trees/README-challenge15.md)
+1. [Code Challenge 16: tree-max](javascript/trees/README-challenge16.md)

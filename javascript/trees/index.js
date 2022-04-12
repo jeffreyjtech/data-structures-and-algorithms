@@ -55,6 +55,20 @@ class Tree {
     traverse(this.root);
     return results;
   }
+
+  findMaxValue() {
+    this.errorIfEmpty();
+    let biggestNumber = null;
+    let traverse = (node) => {
+      if (biggestNumber === null || biggestNumber < node.value) {
+        biggestNumber = node.value;
+      }
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    };
+    traverse(this.root);
+    return biggestNumber;
+  }
 }
 
 class SearchTree extends Tree {
@@ -102,6 +116,28 @@ class SearchTree extends Tree {
         return traverse(node.left);
       } else {
         return traverse(node.right);
+      }
+    };
+
+    return traverse(this.root);
+  }
+
+  findSortedMaxValue() {
+    this.errorIfEmpty();
+
+    const traverse = (node) => {
+      if (node.right === null && node.left === null) {
+        return node.value;
+      } else if (node.left === null) {
+        return traverse(node.right);
+      } else if (node.right === null) {
+        return traverse(node.right);
+      } else {
+        if(node.right.value > node.left.value) {
+          return traverse(node.right);
+        } else {
+          return traverse(node.left);
+        }
       }
     };
 
