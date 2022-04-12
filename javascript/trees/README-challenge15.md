@@ -43,4 +43,3 @@ For the Binary Search Tree methods, I tried using iterative logic for `add()`, t
   - with `contains()` method
     - Argument: `value`
     - Returns: `Boolean` indicating whether or not the `value` is in the tree at least once.
-    
