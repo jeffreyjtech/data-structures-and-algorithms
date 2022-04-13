@@ -1,5 +1,7 @@
 'use strict';
 
+const { Queue } = require('../stack-and-queue');
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -145,8 +147,27 @@ class SearchTree extends Tree {
   }
 }
 
+function breadthFirst(tree) {
+  tree.errorIfEmpty();
+  let levelQueue = new Queue();
+  levelQueue.enqueue(tree.root);
+  let current = tree.root;
+  let result = [];
+
+  while(!levelQueue.isEmpty()) {
+    current = levelQueue.dequeue();
+    result.push(current.value);
+
+    if (current.left) levelQueue.enqueue(current.left);
+    if (current.right) levelQueue.enqueue(current.right);
+  }
+
+  return result;
+}
+
 module.exports = {
   Tree,
   Node,
-  SearchTree
+  SearchTree,
+  breadthFirst,
 };
