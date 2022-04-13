@@ -42,3 +42,4 @@ To run your tests
 1. Code Challenge 14 was a mock interview not documented in this repo.
 1. [Code Challenge 15: trees](javascript/trees/README-challenge15.md)
 1. [Code Challenge 16: tree-max](javascript/trees/README-challenge16.md)
+1. [Code Challenge 17: tree-breadth-first](javascript/trees/README-challenge17.md)
