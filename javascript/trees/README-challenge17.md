@@ -11,7 +11,9 @@ Write a function called breadth first, which traverses a tree in a breadth-first
 
 ## Approach & Efficiency
 
-For this Code Challenge, I used breadthFirst traversal algorithm presented during the "Trees" lecture as a starting point. I gave a lot of thought to if it could be improved, or if a recursive approach might be better, but I could not think of a good reason to change it that significantly. An iterative approach using a Queue perfectly fits this task. Iteration works well because we're reading nodes per level of the tree. Recursive traversal does not seem well-suited to combining data from separate sub-trees. A Queue works well because we need to read the values in a FIFO-esque order.
+For this Code Challenge, I used breadthFirst traversal algorithm presented during the "Trees" lecture as a starting point. I gave a lot of thought to if it could be improved, or if a recursive approach might be better, but I could not think of a good reason to change it that significantly.
+
+An iterative approach using a Queue perfectly fits this task. Iteration works well because we're reading nodes per level of the tree. Recursive traversal does not seem well-suited to combining data from separate sub-trees. A Queue works well because we need to read the values in a FIFO-esque order.
 
 The Big O time and space efficiencies are O(n) and O(1) respectively.
 
