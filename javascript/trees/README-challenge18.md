@@ -10,7 +10,9 @@ Set the values of each of the new nodes depending on the corresponding node valu
 
 ## Approach & Efficiency
 
-For this Code Challenge, I 
+For this Code Challenge, my starting point was recursive logic similar to a depth-first preOrder traversal. Except, I'd invoke the recursive function with both an input node and a new tree's node as the arguments. The idea was to move parallel pointers across input tree and result tree, building the new tree as I read from the other.
+
+The Big O time and space efficiencies are O(n) and O(1). There's not much getting around an O(n) time efficiency when the input is an unsorted tree.
 
 ## Solution
 
