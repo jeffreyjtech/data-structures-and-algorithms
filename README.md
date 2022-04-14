@@ -43,3 +43,4 @@ To run your tests
 1. [Code Challenge 15: trees](javascript/trees/README-challenge15.md)
 1. [Code Challenge 16: tree-max](javascript/trees/README-challenge16.md)
 1. [Code Challenge 17: tree-breadth-first](javascript/trees/README-challenge17.md)
+1. [Code Challenge 18: tree-fizz-buzz](javascript/trees/README-challenge18.md)
