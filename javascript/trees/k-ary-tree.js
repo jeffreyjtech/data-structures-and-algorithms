@@ -32,13 +32,13 @@ function fizzBuzzTree (karyTree) {
     // Set the new tree's node to the fizzbuzzed valued of the input node
     newNode.value = fizzBuzz(node.value);
     for (let i = 0; i < node.children.length; i++) {
-      // Each child of newNode must be assigned a newly constructed KaryNode
-      // The other solution I had ended up modifying the input tree by reference
+      // Each child node of newNode must be assigned a newly constructed KaryNode to match our base case
       newNode.children[i] = new KaryNode(null);
       dualTraverse (node.children[i], newNode.children[i]);
     }
   };
-  // Give newTree an empty node so our base case matches well with the recursive logic
+  // Give newTree an empty root node so our recursive logic is properly constructing the tree
+  // The other solutions I tried failed, because they created disconnected subtrees or modified the input tree.
   newTree.root = new KaryNode(null);
 
   dualTraverse(karyTree.root, newTree.root, newTree);
