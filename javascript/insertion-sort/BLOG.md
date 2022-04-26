@@ -19,7 +19,7 @@ InsertionSort(int[] arr)
 
 ## How does it work?
 
-Let's walk it through this example
+Let's walk it through this test array `[2, 51, 9]`
 
 First we started a `for` loop which will iterate through the entire array. Since the function uses `i` and `j` to compare pairs of adjacent indices, it's necessary to start iterating at index 1 instead of index 0.
 
