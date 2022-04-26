@@ -44,7 +44,7 @@ To run your tests
 1. [Code Challenge 16: tree-max](javascript/trees/README-challenge16.md)
 1. [Code Challenge 17: tree-breadth-first](javascript/trees/README-challenge17.md)
 1. [Code Challenge 18: tree-fizz-buzz](javascript/trees/README-challenge18.md)
-1. *N/A due to project week*
+1. Code Challenge 19 was a mock interview not documented in this repo.
 1. *N/A due to project week*
 1. *N/A due to project week*
 1. *N/A due to project week*
