@@ -23,19 +23,15 @@ function mergeSort(array) {
 function merge(left, right) {
   console.log('Merging', left, right);
   let result = [];
-  // let leftIndex = 0; // current index of left
-  // let rightIndex = 0; // current index of right
-  let resultIndex = 0; // current index of the new array
 
   while (left.length > 0 && right.length > 0) {
     if (left[0] <= right[0]) {
       console.log('left[0] is less');
-      result[resultIndex] = left.shift();
+      result.push(left.shift());
     } else {
       console.log('right[0] is less');
-      result[resultIndex] = right.shift();
+      result.push(right.shift());
     }
-    resultIndex++;
   }
 
   if (left.length === 0) {
