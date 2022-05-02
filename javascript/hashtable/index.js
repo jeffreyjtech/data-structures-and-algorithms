@@ -25,6 +25,12 @@ class HashTable {
     if (this.buckets[position]) {
       // Find the existing LinkedList which (hopefully) has an append method
       let bucket = this.buckets[position];
+      bucket.traverse((nodeValue) => {
+        if (nodeValue[key]) {
+          nodeValue[key] = value;
+          return;
+        }
+      });
       bucket.append(data);
     } else {
       // Else create a new LinkedList and assign it to the bucket
@@ -39,12 +45,12 @@ class HashTable {
 
     if (this.buckets[position]) {
       let bucket = this.buckets[position];
-      let current = bucket.head.value;
-      while (!current[key]) {
+      let current = bucket.head;
+      while (!Object.keys(current.value).includes(key)) {
         if (current.next === null) return null;
         current = current.next;
       }
-      return current[key];
+      return current.value[key];
     } else {
       return null;
     }
