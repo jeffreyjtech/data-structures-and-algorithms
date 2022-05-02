@@ -4,7 +4,7 @@ function mergeSort(array) {
 
   if (array.length > 1) {
     let temp = [...array];
-    let mid = Math.floor(array.length / 2);
+    let mid = Math.ceil(array.length / 2);
     let left = temp.splice(0, mid);
     let right = temp;
 
