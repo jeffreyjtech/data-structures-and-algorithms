@@ -1,45 +1,52 @@
 'use strict';
 
 function mergeSort(array) {
-  let n = array.length;
 
-  if (n > 1) {
+  if (array.length > 1) {
     let temp = [...array];
-    let mid = Math.ceil(n / 2);
+    let mid = Math.floor(array.length / 2);
     let left = temp.splice(0, mid);
     let right = temp;
 
-
-    mergeSort(left);
-    mergeSort(right);
-    merge(left, right, array);
+    left = mergeSort(left);
+    right = mergeSort(right);
+    return merge(left, right);
+  } else {
+    // VERY IMPORTANT else & return statement
+    // If this has recursed to the point that we're now dealing with single item arrays
+    // We need to pop back up the callstack while returning the input array as-is for further merging.
+    // Otherwise, we'll just end up returning "undefined" instead of arrays before merge() is called in the above codeblock
+    return array;
   }
 }
 
-function merge(left, right, array) {
-  let i = 0;
-  let j = 0;
-  let k = 0;
+function merge(left, right) {
+  console.log('Merging', left, right);
+  let result = [];
+  // let leftIndex = 0; // current index of left
+  // let rightIndex = 0; // current index of right
+  let resultIndex = 0; // current index of the new array
 
-  while (i < left.length && j < right.length) {
-    if (left[i] <= right[j]) {
-      array[k] = left[i];
-      i++;
+  while (left.length > 0 && right.length > 0) {
+    if (left[0] <= right[0]) {
+      console.log('left[0] is less');
+      result[resultIndex] = left.shift();
     } else {
-      array[k] = right[j];
-      j++;
+      console.log('right[0] is less');
+      result[resultIndex] = right.shift();
     }
-    k++;
+    resultIndex++;
   }
 
-  console.log(array, right, left);
-  console.log('i, j, k\n', i, j, k);
-  if (i === left.length) {
-    array.splice(k+left.length, right.length, ...right);
+  if (left.length === 0) {
+    console.log('Splicing in right', left, right);
+    result.push(...right);
   } else {
-    array.splice(k, left.length, ...left);
+    console.log('Splicing in left', left, right);
+    result.push(...left);
   }
-  console.log('After splice:', array);
+  console.log('After splice:', result);
+  return result;
 }
 
 module.exports = mergeSort;
