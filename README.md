@@ -51,4 +51,7 @@ To run your tests
 1. *N/A due to project week*
 1. *N/A due to project week*
 1. *N/A due to project week*
-1. [Code Challlenge 26: insertion-sort](javascript/trees/README-challenge26.md)
+1. [Code Challenge 26: insertion-sort](javascript/insertion-sort/BLOG.md)
+1. [Code Challenge 27: merge-sort](https://docs.google.com/document/d/1JsyxAKn3q4iyzSgvqisRjRW5S_njuVf_k1R6qlZd6tU/edit?usp=sharing)
+1. [Code Challenge 28: quick-sort](https://docs.google.com/document/d/10N4i3v2bOIrfkKiUCfRtj75rexBxZ7LVL6F-zXzBaRQ/edit?usp=sharing)
+1. Code Challenge 29 was a mock interview not documented in this repo.
