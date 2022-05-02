@@ -1,6 +1,6 @@
 # Hashtables
 
-Hash Tables are a data structure which uses a mathematical function known as a hash function to store data in a table and quickly retrieve that data when it's needed. It stores key-value pairs, and this is necessary as the key must be able to be processed by a hash function. The value will store whatever you need stored. Each row of the table is a hash, which is normally limited by ending every hash function with `initialHash % n` with n being the number of unique hashes desired for the hash table.
+Hash Tables are a data structure which uses a mathematical function known as a hash function to store data in a table and quickly retrieve that data when it's needed. It stores key-value pairs, and this is necessary as the key must be able to be processed by a hash function. The value will store whatever you need stored. Each row of the table is a hash, which is normally limited by ending every hash function with `initialHash % n` with n being the number of unique hashes desired for the hash table. Since the hash function deterministically creates the same hash for the same key, an *ideal* hash table *always* has a blazing-fast lookup time of O(1).
 
 ## Challenge
 
