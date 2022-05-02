@@ -15,7 +15,7 @@ function mergeSort(array) {
     // VERY IMPORTANT else & return statement
     // If this has recursed to the point that we're now dealing with single item arrays
     // We need to pop back up the callstack while returning the input array as-is for further merging.
-    // Otherwise, we'll just end up returning "undefined" instead of arrays before merge() is called in the above codeblock
+    // Otherwise, when merge() is finally called, the provided args will be "undefined" instead of 2 arrays.
     return array;
   }
 }
