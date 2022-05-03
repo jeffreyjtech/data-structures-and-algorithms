@@ -1,6 +1,6 @@
 'use strict';
 
-const HashTable = require('./');
+const HashTable = require('./Hashtable');
 
 describe('Testing HashTable implementation', () => {
   let testTable = new HashTable(1024);
@@ -42,6 +42,10 @@ describe('Testing HashTable implementation', () => {
     value = testTable.get('Hello');
 
     expect(value).toBe('World');
+    testTable.set('Hdmmn', 'sup');
+    value = testTable.get('Hdmmn');
+
+    expect(value).toBe('sup');
   });
 
   test('Successfully hash a key to an in-range value', () => {

@@ -26,7 +26,7 @@ class HashTable {
       // Find the existing LinkedList which (hopefully) has an append method
       let bucket = this.buckets[position];
       bucket.traverse((nodeValue) => {
-        if (nodeValue[key]) {
+        if (nodeValue[key] !== undefined) {
           nodeValue[key] = value;
           return;
         }
@@ -79,6 +79,32 @@ class HashTable {
     return keys;
   }
 
+  setOrGet(key, value) {
+    // Basically the same as set, except if the key already exists, the existing value is returned with no changes made.
+    let position = this.hash(key);
+    let data = { [key]: value };
+
+    // If the bucket is already occupied
+    if (this.buckets[position]) {
+      // Find the existing LinkedList which (hopefully) has an append method
+      let bucket = this.buckets[position];
+      // Traverse the LinkedList to check for keys of the same name
+      let current = bucket.head;
+      while (current !== null) {
+        // Return true if the key is there;
+        if(current.value[key] === 1) return current.value[key];
+        current = current.next;
+      }
+      // If we've fallen out of the while loop, it's safe to assume the key is unique
+      // Thus we'll append the the bucket
+      bucket.append(data);
+    } else {
+      // Since a bucket does not already exist, create a new LinkedList and assign it to the bucket
+      let bucket = new LinkedList();
+      bucket.append(data);
+      this.buckets[position] = bucket;
+    }
+  }
 }
 
 module.exports = HashTable;
