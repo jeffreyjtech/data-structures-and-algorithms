@@ -80,7 +80,7 @@ class HashTable {
   }
 
   setOrGet(key, value) {
-    // Basically the same as set, except it will return true if the key already exists in any bucket in the table
+    // Basically the same as set, except if the key already exists, the existing value is returned with no changes made.
     let position = this.hash(key);
     let data = { [key]: value };
 
@@ -92,7 +92,7 @@ class HashTable {
       let current = bucket.head;
       while (current !== null) {
         // Return true if the key is there;
-        if(current.value[key] === 1) return true;
+        if(current.value[key] === 1) return current.value[key];
         current = current.next;
       }
       // If we've fallen out of the while loop, it's safe to assume the key is unique
