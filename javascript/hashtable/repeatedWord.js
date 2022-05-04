@@ -8,7 +8,7 @@ function repeatedWord(string) {
   let wordArray = cleanedString.match(/[a-z]+/gmi);
 
   for (let word of wordArray) {
-    let getFlag = wordHashtable.setOrGet(word, 1);
+    let getFlag = wordHashtable.setOrGet(word, word);
     if(getFlag) return word;
   }
 }

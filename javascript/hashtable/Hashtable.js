@@ -92,7 +92,7 @@ class HashTable {
       let current = bucket.head;
       while (current !== null) {
         // Return true if the key is there;
-        if(current.value[key] === 1) return current.value[key];
+        if(current.value[key] === value) return current.value[key];
         current = current.next;
       }
       // If we've fallen out of the while loop, it's safe to assume the key is unique
