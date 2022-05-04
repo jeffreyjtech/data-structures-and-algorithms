@@ -58,6 +58,18 @@ class Tree {
     return results;
   }
 
+  traverseWithCallback(callback) {
+    this.errorIfEmpty();
+    let results = [];
+    let traverse = (node) => {
+      callback(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    };
+    traverse(this.root);
+    return results;
+  }
+
   findMaxValue() {
     this.errorIfEmpty();
     let biggestNumber = null;
