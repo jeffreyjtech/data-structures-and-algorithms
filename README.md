@@ -56,4 +56,5 @@ To run your tests
 1. [Code Challenge 28: quick-sort](https://docs.google.com/document/d/10N4i3v2bOIrfkKiUCfRtj75rexBxZ7LVL6F-zXzBaRQ/edit?usp=sharing)
 1. *Code Challenge 29 was a mock interview not documented in this repo.*
 1. [Code Challenge 30: hashtable](javascript/hashtable/README-hashtable.md)
-1. [Code Challenge 31: hashtable](javascript/hashtable/README-repeatedWord.md)
+1. [Code Challenge 31: hashmap-repeated-word](javascript/hashtable/README-repeatedWord.md)
+1. [Code Challenge 32: tree-intersection](javascript/treeIntersection/README.md)
