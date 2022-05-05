@@ -21,27 +21,21 @@ function mergeSort(array) {
 }
 
 function merge(left, right) {
-  console.log('Merging', left, right);
   let result = [];
 
   while (left.length > 0 && right.length > 0) {
     if (left[0] <= right[0]) {
-      console.log('left[0] is less');
       result.push(left.shift());
     } else {
-      console.log('right[0] is less');
       result.push(right.shift());
     }
   }
 
   if (left.length === 0) {
-    console.log('Splicing in right', left, right);
     result.push(...right);
   } else {
-    console.log('Splicing in left', left, right);
     result.push(...left);
   }
-  console.log('After splice:', result);
   return result;
 }
 

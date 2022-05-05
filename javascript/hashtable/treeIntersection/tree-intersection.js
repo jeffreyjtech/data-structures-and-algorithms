@@ -7,8 +7,6 @@ function treeIntersection(treeA, treeB) {
   let duplicates = [];
   const checkValues = (value) => {
     const duplicateFlag = valuesTable.setOrGet(value.toString(), value);
-    console.log(valuesTable);
-    console.log(duplicateFlag);
     if (duplicateFlag) {
       duplicates.push(value);
     }
