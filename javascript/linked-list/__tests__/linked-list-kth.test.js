@@ -11,7 +11,6 @@ describe('Linked List v3 tests (Code Challenge 07)', () => {
   testLL.append(value1);
   testLL.append(value2);
   testLL.append(value3);
-  console.log(testLL.length);
 
   it('Where k is greater than the length of the linked list', () => {
     let k = 4;

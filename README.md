@@ -57,4 +57,4 @@ To run your tests
 1. *Code Challenge 29 was a mock interview not documented in this repo.*
 1. [Code Challenge 30: hashtable](javascript/hashtable/README-hashtable.md)
 1. [Code Challenge 31: hashmap-repeated-word](javascript/hashtable/README-repeatedWord.md)
-1. [Code Challenge 32: tree-intersection](javascript/treeIntersection/README.md)
+1. [Code Challenge 32: tree-intersection](javascript/hashtable/treeIntersection/README.md)

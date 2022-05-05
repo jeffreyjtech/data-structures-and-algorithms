@@ -105,6 +105,13 @@ class HashTable {
       this.buckets[position] = bucket;
     }
   }
+
+  callingAllKeys(callback) {
+    let existingHashes = this.buckets.filter((bucket) => Boolean(bucket));
+    existingHashes.forEach((linkedList) => {
+      linkedList.traverse(callback);
+    });
+  }
 }
 
 module.exports = HashTable;
