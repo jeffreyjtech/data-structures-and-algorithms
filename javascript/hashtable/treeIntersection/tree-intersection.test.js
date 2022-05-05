@@ -1,6 +1,6 @@
 'use strict';
 
-const { Tree, Node } = require('../trees');
+const { Tree, Node } = require('../../trees');
 const treeIntersection = require('./tree-intersection');
 
 describe('Testing treeIntersection function', () => {

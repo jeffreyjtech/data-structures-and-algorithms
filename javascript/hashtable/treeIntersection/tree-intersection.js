@@ -1,6 +1,6 @@
 'use strict';
 
-const Hashtable = require('../hashtable/Hashtable');
+const Hashtable = require('../Hashtable');
 
 function treeIntersection(treeA, treeB) {
   let valuesTable = new Hashtable(1024);
