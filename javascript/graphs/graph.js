@@ -64,7 +64,7 @@ class Graph {
       }
       console.log('Ending iteration', queue);
     }
-    return visited;
+    return [...visited];
   }
 
   /*
