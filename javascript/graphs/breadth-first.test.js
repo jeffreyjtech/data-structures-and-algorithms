@@ -2,26 +2,48 @@
 
 const Graph = require('./graph');
 
-let graph1 = new Graph();
-let orange = graph1.addVertex('orange');
-let apple = graph1.addVertex('apple');
-graph1.addEdge(orange, apple);
-let apricot = graph1.addVertex('apricot');
-graph1.addEdge(orange, apricot);
-let fig = graph1.addVertex('fig');
-graph1.addEdge(apricot, fig);
-let cherry = graph1.addVertex('cherry');
-graph1.addEdge(fig, cherry);
-let grape = graph1.addVertex('grape');
-graph1.addEdge(cherry, grape);
-graph1.addEdge(grape, fig);
-let cabbage = graph1.addVertex('cabbage');
-
 describe('Testing the breadthFirst traversal method', () => {
 
   test('Returns correct output on fruit whiteboard example', () => {
+    let graph = new Graph();
+    let orange = graph.addVertex('orange');
+    let apple = graph.addVertex('apple');
+    graph.addEdge(orange, apple);
+    let apricot = graph.addVertex('apricot');
+    graph.addEdge(orange, apricot);
+    let fig = graph.addVertex('fig');
+    graph.addEdge(apricot, fig);
+    let cherry = graph.addVertex('cherry');
+    graph.addEdge(fig, cherry);
+    let grape = graph.addVertex('grape');
+    graph.addEdge(cherry, grape);
+    graph.addEdge(grape, fig);
+    let cabbage = graph.addVertex('cabbage');
 
-    expect(graph1.breadthFirst(orange)).toStrictEqual([orange, apple, apricot, fig, cherry, grape]);
-    expect(graph1.breadthFirst(cabbage)).toStrictEqual([cabbage]);
+    expect(graph.breadthFirst(orange)).toStrictEqual([orange, apple, apricot, fig, cherry, grape]);
+    expect(graph.breadthFirst(cabbage)).toStrictEqual([cabbage]);
+  });
+
+  test('Returns correct output on a single vertex graph', () => {
+    let graph = new Graph();
+    let orange = graph.addVertex('orange');
+
+    expect(graph.breadthFirst(orange)).toStrictEqual([orange]);
+  });
+
+  test('Returns correct output on a complete, cyclical graph (all vertices connect to all other vertices)', () => {
+    let graph = new Graph();
+    let orange = graph.addVertex('orange');
+    let apple = graph.addVertex('apple');
+    let apricot = graph.addVertex('apricot');
+    graph.addEdge(orange, apple);
+    graph.addEdge(apple, apricot);
+    graph.addEdge(orange, apricot);
+
+    graph.addEdge(apple, orange);
+    graph.addEdge(orange, apricot);
+    graph.addEdge(apricot, apple);
+
+    expect(graph.breadthFirst(orange)).toStrictEqual([orange, apple, apricot]);
   });
 });
