@@ -11,3 +11,5 @@ Given a business trip itinerary, and an Alaska Airlines route map, is the trip p
 ## Approach & Efficiency
 
 ## Solution
+
+![My Whiteboard solution](./assets/challenge-37-whiteboard.jpg)
