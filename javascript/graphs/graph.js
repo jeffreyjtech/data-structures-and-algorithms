@@ -32,6 +32,13 @@ class Graph {
     neighbors.push(new Edge(endVertext, weight));
   }
 
+  addBidirectionalEdge(startVertex, endVertext, weight) {
+    const startNeighbors = this.adjacencyList.get(startVertex);
+    startNeighbors.push(new Edge(endVertext, weight));
+    const endNeighbors = this.adjacencyList.get(endVertext);
+    endNeighbors.push(new Edge(startVertex, weight));
+  }
+
   getNeighbors(vertex) {
     return [...this.adjacencyList.get(vertex)];
   }
