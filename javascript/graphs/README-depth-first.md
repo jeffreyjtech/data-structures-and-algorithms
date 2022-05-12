@@ -12,7 +12,11 @@ Write the following method for the Graph class:
 - Program output: Display the collection
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+My approach was first to try to use similar logic to the breadth first traversal, except use a stack instead of a queue. That didn't work out, so I pivoted to make a recursive function with which to traverse.
+
+The time and space complexity are O(n) and O(n) respectively.
 
 ## Solution
-<!-- Embedded whiteboard image -->
+
+![My Whiteboard solution](./assets/challenge-38-whiteboard.jpg)
