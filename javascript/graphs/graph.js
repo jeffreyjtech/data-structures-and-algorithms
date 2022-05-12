@@ -60,42 +60,35 @@ class Graph {
     let current = null;
 
     while (!queue.isEmpty()) {
-      console.log('Starting iteration', queue);
       current = queue.dequeue();
       let neighbors = this.getNeighbors(current);
       for (let edge of neighbors) {
-        if(!visited.has(edge.vertex)) {
+        if (!visited.has(edge.vertex)) {
           visited.add(edge.vertex);
           queue.enqueue(edge.vertex);
         }
       }
-      console.log('Ending iteration', queue);
     }
     return [...visited];
   }
 
-  /*
-    depthFirst(startVertex) {
-    let stack = new Stack();
-    stack.push(startVertex);
+  depthFirst(startVertex) {
     let visited = new Set();
     visited.add(startVertex);
 
-    let current = null;
-
-    console.log(stack.isEmpty());
-
-    while (!stack.isEmpty()) {
-      current = stack.pop();
-      let neighbors = this.getNeighbors(current);
+    const traverse = (vertex) => {
+      let neighbors = this.getNeighbors(vertex);
       for (let edge of neighbors) {
-        console.log(stack);
-        visited.add(edge.vertex);
-        stack.push(edge.vertex);
+        if (!visited.has(edge.vertex)) {
+          visited.add(edge.vertex);
+          traverse(edge.vertex);
+        }
       }
-    }
-    return visited;
-  */
+      return vertex;
+    };
+    traverse(startVertex);
+    return [...visited].reverse();
+  }
 }
 
 // let graph1 = new Graph();
